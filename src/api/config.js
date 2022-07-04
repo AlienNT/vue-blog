@@ -1,4 +1,5 @@
-export const host = 'https://my-json-server.typicode.com'
+// export const host = 'https://my-json-server.typicode.com'
+export const host = 'http://localhost:5000'
 export const project = {
     author: {
         name: 'Nick',
@@ -11,7 +12,8 @@ export const project = {
     },
     repo: 'json-server'
 }
-export const apiUrl = `${host}/${project.author.nickName}/${project.repo}`
+// export const apiUrl = `${host}/${project.author.nickName}/${project.repo}`
+export const apiUrl = host
 
 export const DB = {
     posts: 'posts',
@@ -24,7 +26,8 @@ export const DB = {
 export const apiRoutes = {
     posts: getUrl(DB.posts),
     categories: getUrl(DB.categories),
-    navigation: getUrl(DB.navigation)
+    navigation: getUrl(DB.navigation),
+    users: getUrl(DB.users)
 }
 
 function getUrl (table) {
