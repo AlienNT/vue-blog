@@ -4,7 +4,7 @@ const AuthMixin = {
     },
     computed: {
         authUser () {
-            return JSON.parse(localStorage?.authUser)
+            return localStorage?.authUser ? JSON.parse(localStorage?.authUser) : null
         },
         authUserInState () {
             return this.$store.getters['auth/GET_AUTH_USER']
