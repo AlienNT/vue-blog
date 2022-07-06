@@ -13,7 +13,11 @@
                     </div>
                 </div>
                 <div class="slider">
-                    <VHomePageDiagonalSlider/>
+                    <VHomePageDiagonalSlider
+                        :delay="5000"
+                        :angle="50"
+                        :images="images"
+                    />
                 </div>
             </div>
         </section>
@@ -27,6 +31,32 @@ export default {
     name: 'VHomePage',
     components: {
         VHomePageDiagonalSlider
+    },
+    data () {
+        return {
+            images: [
+                {
+                    id: 1,
+                    path: require('../assets/img/jpg/anime2.jpg'),
+                    alt: 'image'
+                },
+                {
+                    id: 2,
+                    path: require('../assets/img/jpg/anime24jpg.jpg'),
+                    alt: 'image'
+                },
+                {
+                    id: 3,
+                    path: require('../assets/img/jpg/anime5.jpg'),
+                    alt: 'image'
+                },
+                {
+                    id: 4,
+                    path: require('../assets/img/jpg/anime6.jpg'),
+                    alt: 'image'
+                }
+            ]
+        }
     }
 }
 </script>
@@ -71,6 +101,13 @@ export default {
     }
 
     .slider {
+        position: fixed;
+        display: flex;
+        top: $headerHeight;
+        right: 5%;
+        width: 500px;
+        height: calc(100vh - #{$headerHeight});
+
         @media all and (max-width: 800px) {
             display: none;
         }
