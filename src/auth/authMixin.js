@@ -3,8 +3,8 @@ const AuthMixin = {
         this.checkAuth()
     },
     computed: {
-        authUser () {
-            return localStorage?.authUser ? JSON.parse(localStorage?.authUser) : null
+        authUserInLocal () {
+            return localStorage?.authUser ? JSON.parse(localStorage.authUser) : null
         },
         authUserInState () {
             return this.$store.getters['auth/GET_AUTH_USER']
