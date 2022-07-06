@@ -22,24 +22,24 @@ const AuthMixin = {
         },
         authUserInState: {
             handler (e) {
-                if (e?.id) {
-                    this.checkAuth()
-                }
-            }
+                this.checkAuth()
+            },
+            immediate: true
         }
     },
     methods: {
         checkAuth () {
-            if (this.authUser?.id && !this.authUserInState?.id) {
+            if (this.authUserInLocal?.id && !this.authUserInState?.id) {
                 this.setAuthUser()
+                this.$router.push('/')
             }
 
-            if (!this.authUser?.id && this.routePath !== '/signup') {
+            if (!this.authUserInState?.id && this.routePath !== '/signup') {
                 this.$router.push('/login')
             }
         },
         setAuthUser () {
-            return this.$store.dispatch('auth/setAuthUserInStorage', this.authUser)
+            return this.$store.dispatch('auth/setAuthUserInStorage', this.authUserInLocal)
         }
     }
 }
