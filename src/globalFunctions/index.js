@@ -7,7 +7,7 @@ export const _last = (value) => {
 }
 
 export const _lastIndex = (value) => {
-    return value?.length ? value[value.length - 1] : null
+    return value?.length ? value.indexOf(value.length - 1) : null
 }
 
 export const _firstToUpper = (string) => {
