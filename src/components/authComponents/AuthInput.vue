@@ -63,6 +63,12 @@ export default {
         align-items: center;
         justify-content: center;
     }
+    .input {
+        flex: 1 1 auto;
+        border-radius: 5px;
+        overflow: hidden;
+
+    }
 }
 
 </style>
