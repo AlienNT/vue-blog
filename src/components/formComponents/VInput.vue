@@ -55,6 +55,7 @@ export default {
     flex: 1 1 auto;
 }
 .v-input {
+    padding: 5px 15px;
     display: flex;
     width: 100%;
     &:active, &:focus {
