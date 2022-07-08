@@ -21,9 +21,6 @@ export default {
     },
     components: {
         VNavItem
-    },
-    mounted () {
-        console.log(this.$options.name, this.data)
     }
 }
 </script>
